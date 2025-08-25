@@ -1,0 +1,8 @@
+Az, hogy egy kliens az IPv6-címadatait a SLAAC vagy a DHCPv6 használatával, esetleg a kettő kombinációjával szerezze meg, az RA-üzenetben lévő beállításokon múlik. Az ICMPv6 RA-üzenetei két jelzőbitet tartalmaznak, annak jelölésére, hogy a kliensnek melyik lehetőséget kellene választania.
+Az egyik a felügyelt címkonfigurációs jelzőbit (Managed Address Configuration flag, M jelzőbit), a másik az egyéb konfigurációs jelzőbit (Other Configuration flag, O jelzőbit).
+Az M és az O jelzőbit különböző kombinációjával, az RA-üzenetek három címzési lehetőség egyikét kínálják az IPv6 eszköz számára az ábrán látható módon:
+SLAAC (csak forgalomirányító-hirdetéssel)
+Állapotmentes DHCPv6 (forgalomirányító-hirdetéssel és DHCPv6-tal)
+Állapottartó DHCPv6 (csak DHCPv6-tal)
+Függetlenül a használt módtól az RFC 4861 azt javasolja, hogy minden IPv6 eszköz végezze el a címütközés-érzékelést bármely egyedi címre vonatkozóan, beleértve a SLAAC és DHCPv6 együttes használatával beállított címeket is.
+MEGJEGYZÉS: Habár az RA-üzenet meghatározza a kliens IPv6-címének dinamikus megszerzéséhez javasolt folyamatot, a kliens operációs rendszere mégis dönthet úgy, hogy figyelmen kívül hagyja az RA-üzenetet, és kizárólag egy DHCPv6-szerver szolgáltatásait veszi igénybe.
